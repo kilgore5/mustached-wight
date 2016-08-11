@@ -19,6 +19,5 @@ afg
 
 dsfhsfj
 
-dsfhfsh
 
 did i just sync????
