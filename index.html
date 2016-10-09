@@ -1,1 +1,72 @@
-ting index.html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+
+
+    <link href="./ghmarkdown.css" media="all" rel="stylesheet">
+
+
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+
+# Title
+
+---
+
+# Agenda
+
+1. Introduction
+2. Deep-dive
+3. ...
+
+---
+
+# Elasticsearch
+
+- `curl -XPUT 'localhost:9200/_cluster/settings' -d '{ "transient" : { "cluster.routing.allocation.enable" : "all"} }'`
+
+#### Documentation
+http://www.elastic.co/guide/en/elasticsearch/reference/current/
+
+#### Setup resources
+- http://chrissimpson.co.uk/using-elasticsearch-on-amazon-ec2.html
+- http://chrissimpson.co.uk/elasticsearch-yellow-cluster-status-explained.html
+
+#### Server setup
+- installed in `/usr/share/elasticsearch`
+- config in `/etc/elasticsearch/elasticsearch.yml`
+- run `sudo service elasticsearch status|start|stop|restart` etc
+
+---
+
+```
+# /etc/elasticsearch/elasticsearch.yml
+
+AWS Plugin for autodiscovery
+################################ AWS Plugin ###################################
+
+cloud:
+    aws:
+        access_key: [...]
+        secret_key: [...]
+
+discovery:
+    type: ec2
+
+discovery.ec2.tag.cluster: elasticsearch-kp01
+```
+
+    </textarea>
+    <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
+
