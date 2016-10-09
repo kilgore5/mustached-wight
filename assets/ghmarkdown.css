@@ -646,3 +646,11 @@
   position: relative;
   border-color: #4183c4;
 }
+
+.remark-slide .left-img,
+.remark-slide .right-img {
+  max-width: 50%;
+}
+
+
+
